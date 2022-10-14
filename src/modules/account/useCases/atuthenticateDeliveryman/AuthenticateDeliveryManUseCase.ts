@@ -21,7 +21,7 @@ export class AuthenticateDeliveryManUseCase {
       throw new AppError(401, 'Username or password invalid');
     }
 
-    const token = jwt.sign({ username }, process.env.JWT_SECRET as string, {
+    const token = jwt.sign({ username }, process.env.JWT_SECRET_DELIVERYMAN as string, {
       subject: deliveryMan.id,
       expiresIn: '1d',
     });

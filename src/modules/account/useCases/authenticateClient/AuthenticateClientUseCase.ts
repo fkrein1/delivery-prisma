@@ -21,7 +21,7 @@ export class AuthenticateClientUseCase {
       throw new AppError(401, 'Username or password invalid');
     }
 
-    const token = jwt.sign({ username }, process.env.JWT_SECRET as string, {
+    const token = jwt.sign({ username }, process.env.JWT_SECRET_CLIENT as string, {
       subject: client.id,
       expiresIn: '1d',
     });

@@ -13,13 +13,10 @@ export class CreateDeliveryManUseCase {
       where: {
         username: {
           equals: username,
-          mode: 'insensitive'
+          mode: 'insensitive',
         },
       },
     });
-
-    console.log(deliveryManExists);
-    console.log('teste');
 
     if (deliveryManExists) throw new AppError(401, 'username already exists');
 
