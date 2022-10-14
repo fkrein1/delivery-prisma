@@ -11,9 +11,9 @@ datasource db {
 }
 
 model DeliveryMan {
-  id         String       @id @default(uuid())
+  id          String       @id @default(uuid())
   username    String       @unique
-  password   String
+  password    String
   Deliveries Deliveries[]
 
   @@map("deliveryman")

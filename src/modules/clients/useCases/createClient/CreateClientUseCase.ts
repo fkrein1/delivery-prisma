@@ -2,16 +2,17 @@ import { hash } from 'bcrypt';
 import { prisma } from '../../../../database/prismaClient';
 import { AppError } from '../../../../errors/AppError';
 
-interface IClient {
+interface ICreateClient {
   username: string;
   password: string;
 }
 
 export class CreateClientUseCase {
-  async execute({ username, password }: IClient) {
+  async execute({ username, password }: ICreateClient) {
     const clientExist = await prisma.clients.findFirst({
       where: {
         username: {
+          equals: username,
           mode: 'insensitive',
         },
       },

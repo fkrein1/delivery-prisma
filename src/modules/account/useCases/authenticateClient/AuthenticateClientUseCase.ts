@@ -1,7 +1,7 @@
 import { compare } from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { prisma } from '../../../database/prismaClient';
-import { AppError } from '../../../errors/AppError';
+import { prisma } from '../../../../database/prismaClient';
+import { AppError } from '../../../../errors/AppError';
 
 interface IClient {
   username: string;
